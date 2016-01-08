@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  div.container
+    h1.page-header Please Signup
+    div.row
+      div.col-md-6.col-md-offset-3
+        form(action="/users/signup" method="post" id="signupForm").form-horizontal.form-user-auth
+          div.form-group
+            label(for="email" class="col-sm-2 control-label")= "Email"
+              i *
+            div.col-sm-10
+              input(required=true type="email" name="email" class="form-control" id="email" placeholder="Email")
+              span.help-block.with-errors
+          div.form-group
+            label(for="password" class="col-sm-2 control-label")= "Password"
+              i *
+            div.col-sm-10
+              input(required=true type="password" name="password" class="form-control" id="password" placeholder="Password")
+              span.help-block.with-errors
+          div.form-group
+            label(for="passwordConfirm" class="col-sm-2 control-label")= "Confirm"
+              i *
+            div.col-sm-10
+              input(required=true data-verify="asdasd" type="password" data-verify-with="password" name="passwordConfirm" class="form-control" id="passwordConfirm" placeholder="Password Confirm")
+              span.help-block.with-errors
+          div.form-group
+            div.col-sm-offset-2.col-sm-10
+              button(type="submit").btn.btn-default Sign up

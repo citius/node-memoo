@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/styles/styles.css')
+  body
+    div#root-container
+      nav(class="navbar navbar-inverse navbar-fixed-top navbar-custom")
+        div.container
+          div.navbar-header
+            button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+              span.sr-only= "Toggle navigation"
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a(href="/", class="navbar-brand")= "Memmo"
+          div#navbar.collapse.navbar-collapse
+            include layout/menu
+      div!= messages()
+      block content
+      
+    script(src="/js/vendors.js")
+    script(src="/js/client.js")
